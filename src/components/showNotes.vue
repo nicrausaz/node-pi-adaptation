@@ -1,6 +1,17 @@
 <template>
   <div class="notesTable">
-    <h1>{{ msg }}</h1>
+    <table>
+        <thead>
+          <th>Semestre</th>
+          <th>Branche</th>
+          <th>Note</th>
+        </thead>
+        <tr v-for item in items>
+          <td>{{item.semestre}}</td>
+          <td>{{item.branche}}</td>
+          <td>{{item.note}}</td>
+        </tr>
+      </table>     
   </div>
 </template>
 
@@ -9,7 +20,10 @@
     name: 'notesTable',
     data () {
       return {
-        msg: 'Notes will be showed here'
+        items: [
+          {semestre: 1, branche: 'maths', note: 5},
+          {semestre: 2, branche: 'allemand', note: 4.5}
+        ]
       }
     }
   }

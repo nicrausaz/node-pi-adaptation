@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <ShowNotes></ShowNotes>
   </div>
 </template>
