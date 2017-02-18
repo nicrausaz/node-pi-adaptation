@@ -10,6 +10,8 @@
         <td>{{item.semestre}}</td>
         <td>{{item.branche}}</td>
         <td>{{item.note}}</td>
+        <button>Edit</button>
+        <button>Delete</button>
       </tr>
     </table>
   </div>
