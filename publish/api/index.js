@@ -4,8 +4,7 @@ const router = express.Router()
 router.get('/', function (req, res) {
   res.json({
     data: {
-      fake: 'foo',
-      mock: 'bar'
+      semestre: 1, branche: 'maths', note: 5
     }
   })
 })

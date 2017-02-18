@@ -1,19 +1,19 @@
 <template>
   <div class="notesTable">
     {{msg}}
-    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-      <thead>
-        <th>Semestre</th>
-        <th>Branche</th>
-        <th>Note</th>
-      </thead>
-      <tbody>
-        <tr v-for="item in items">
-          <td class="mdl-data-table__cell--non-numeric">{{item.semestre}}</td>
-          <td class="mdl-data-table__cell--non-numeric">{{item.branche}}</td>
-          <td class="mdl-data-table__cell--non-numeric">{{item.note}}</td>
-        </tr>
-      </tbody>
+
+    <thead>
+      <th>Semestre</th>
+      <th>Branche</th>
+      <th>Note</th>
+    </thead>
+    <tbody>
+      <tr v-for="item in items">
+        <td>{{item.semestre}}</td>
+        <td>{{item.branche}}</td>
+        <td>{{item.note}}</td>
+      </tr>
+    </tbody>
     </table>
     <button>Edit</button>
     <button>Delete</button>
@@ -35,3 +35,9 @@
   }
 
 </script>
+
+<style>
+  table {
+    margin-left: 50px;
+  }
+</style>
