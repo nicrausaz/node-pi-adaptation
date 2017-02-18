@@ -1,19 +1,22 @@
 <template>
   <div class="notesTable">
-    <table>
+    {{msg}}
+    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
       <thead>
         <th>Semestre</th>
         <th>Branche</th>
         <th>Note</th>
       </thead>
-      <tr v-for="item in items">
-        <td>{{item.semestre}}</td>
-        <td>{{item.branche}}</td>
-        <td>{{item.note}}</td>
-        <button>Edit</button>
-        <button>Delete</button>
-      </tr>
+      <tbody>
+        <tr v-for="item in items">
+          <td class="mdl-data-table__cell--non-numeric">{{item.semestre}}</td>
+          <td class="mdl-data-table__cell--non-numeric">{{item.branche}}</td>
+          <td class="mdl-data-table__cell--non-numeric">{{item.note}}</td>
+        </tr>
+      </tbody>
     </table>
+    <button>Edit</button>
+    <button>Delete</button>
   </div>
 </template>
 
@@ -22,6 +25,7 @@
     name: 'notesTable',
     data () {
       return {
+        msg: 'Notes:',
         items: [
           { semestre: 1, branche: 'maths', note: 5 },
           { semestre: 2, branche: 'allemand', note: 4.5 }
@@ -31,24 +35,3 @@
   }
 
 </script>
-
-<style scoped>
-  h1,
-  h2 {
-    font-weight: normal;
-  }
-  
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  li {
-    display: inline-block;
-    margin: 0 10px;
-  }
-  
-  a {
-    color: #42b983;
-  }
-</style>
