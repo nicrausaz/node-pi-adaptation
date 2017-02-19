@@ -1,21 +1,19 @@
 <template>
   <div id="app">
-    <Header></Header>
+    <Navbar></Navbar>
     <ShowNotes></ShowNotes>
-    <Test></Test>
   </div>
 </template>
 
 <script>
   import ShowNotes from './components/showNotes'
-  import Header from './components/header'
-  // import Test from './components/test'
+  import Navbar from './components/navbar'
 
   export default {
     name: 'app',
     components: {
-      ShowNotes,
-      Header
+      Navbar,
+      ShowNotes
     }
   }
 
