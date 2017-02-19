@@ -13,6 +13,9 @@
       </tr>
     </tbody>
     </table>
+    <form method="GET">
+    <input type="submit" action="http://localhost:3000/api/listNotes">
+    </form>
   </div>
 </template>
 
@@ -21,19 +24,16 @@
     name: 'notesTable',
     data () {
       return {
-        msg: 'Notes:',
-        items: [
-          { semestre: 1, branche: 'maths', note: 5 },
-          { semestre: 2, branche: 'allemand', note: 4.5 }
-        ]
+        msg: 'Notes:'
       }
+    },
+    methods: {
     }
   }
 
 </script>
 
 <style>
-  
   table {
     border-collapse: collapse;
     width: 100%;
@@ -45,7 +45,7 @@
     text-align: left;
     border-bottom: 1px solid #ddd;
   }
-
+  
   tr:hover {
     background-color: #f5f5f5
   }
