@@ -8,36 +8,51 @@
 </div>
 
 <script>
+  export default {
+    name: 'test',
+    data() {
+      return {
+        columns: [
+          'Semestre',
+          'Branche',
+          'Note',
+          'Actions'
+        ],
+        itemActions: [
+          { name: 'view-item', label: '', icon: 'zoom icon', class: 'ui teal button' },
+          { name: 'edit-item', label: '', icon: 'edit icon', class: 'ui orange button' },
+          { name: 'delete-item', label: '', icon: 'delete icon', class: 'ui red button' }
+        ],
+        methods: {
+          viewProfile: function (id) {
+            console.log('view profile with id:', id)
+          }
+        },
+        events: {
+          'vuetable:action': function (action, data) {
+            console.log('vuetable:action', action, data)
+            if (action == 'view-item') {
+              this.viewProfile(data.id)
+            }
+          },
+          'vuetable:load-error': function (response) {
+            console.log('Load Error: ', response)
+          }
+        },
+        items: [
+          { semestre: 1, branche: 'maths', note: 5 },
+          { semestre: 2, branche: 'allemand', note: 4.5 }
+        ]
+      }
+    }
+  }
   new Vue({
     el: '#app',
     data: {
-      columns: [
-        'Semestre',
-        'Branche',
-        'Note',
-        'Actions'
-      ],
-      itemActions: [
-        { name: 'view-item', label: '', icon: 'zoom icon', class: 'ui teal button' },
-        { name: 'edit-item', label: '', icon: 'edit icon', class: 'ui orange button' },
-        { name: 'delete-item', label: '', icon: 'delete icon', class: 'ui red button' }
-      ]
+
+
     },
-    methods: {
-      viewProfile: function (id) {
-        console.log('view profile with id:', id)
-      }
-    },
-    events: {
-      'vuetable:action': function (action, data) {
-        console.log('vuetable:action', action, data)
-        if (action == 'view-item') {
-          this.viewProfile(data.id)
-        }
-      },
-      'vuetable:load-error': function (response) {
-        console.log('Load Error: ', response)
-      }
-    }
+
   })
+
 </script>

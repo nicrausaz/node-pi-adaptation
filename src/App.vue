@@ -9,7 +9,7 @@
 <script>
   import ShowNotes from './components/showNotes'
   import Header from './components/header'
-  import Test from './components/test'
+  // import Test from './components/test'
 
   export default {
     name: 'app',
