@@ -1,7 +1,7 @@
 <template>
     <header>
         <ul>
-            <li><a href="">Acceuil</a></li>
+            <li><a href="index.html">Acceuil</a></li>
             <li><a href="">Afficher les notes</a></li>
             <li><a href="">Ajouter des notes</a></li>
         </ul>

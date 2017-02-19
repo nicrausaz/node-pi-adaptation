@@ -2,18 +2,21 @@
   <div id="app">
     <Navbar></Navbar>
     <ShowNotes></ShowNotes>
+    <AddNotes></AddNotes>
   </div>
 </template>
 
 <script>
-  import ShowNotes from './components/showNotes'
   import Navbar from './components/navbar'
+  import ShowNotes from './components/showNotes'
+  import AddNotes from './components/addNotes'
 
   export default {
     name: 'app',
     components: {
       Navbar,
-      ShowNotes
+      ShowNotes,
+      AddNotes
     }
   }
 

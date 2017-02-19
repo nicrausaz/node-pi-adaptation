@@ -1,7 +1,5 @@
 <template>
   <div class="notesTable">
-    {{msg}}
-
     <thead>
       <th>Semestre</th>
       <th>Branche</th>
@@ -15,8 +13,6 @@
       </tr>
     </tbody>
     </table>
-    <button>Edit</button>
-    <button>Delete</button>
   </div>
 </template>
 
@@ -37,7 +33,20 @@
 </script>
 
 <style>
+  
   table {
-    margin-left: 50px;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th,
+  td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  tr:hover {
+    background-color: #f5f5f5
   }
 </style>
