@@ -18,7 +18,7 @@
 <script>
   export default {
     name: 'notesTable',
-    data () {
+    data() {
       return {
         branches: [
           { nom: 'Mathématiques' },

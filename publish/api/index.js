@@ -17,9 +17,8 @@ router.get('/', function (req, res) {
 
 router.post('/addNote', urlencodedParser, function (req, res) {
   var newNote = new Note({ semestre: req.body.semestreSelect, branche: req.body.brancheSelect, note: req.body.noteSelect })
-  newNote.save(function (err) {
-    if (err) throw err;
-  })
+  saveNewNote()
+  res.resdirect('index.html')
 })
 
 router.get('/listNotes', function (req, res) {
@@ -30,5 +29,11 @@ router.get('/listNotes', function (req, res) {
     ]
   })
 })
+
+function saveNewNote() {
+  newNote.save(function (err) {
+    if (err) throw err;
+  })
+}
 
 module.exports = router
