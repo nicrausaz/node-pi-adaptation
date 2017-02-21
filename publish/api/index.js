@@ -1,6 +1,9 @@
 const express = require('express')
 const router = express.Router()
 const mongoose = require('mongoose')
+const bodyParser = require('body-parser')
+
+const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 const Note = require('../../models/Note.js');
 
@@ -12,8 +15,8 @@ router.get('/', function (req, res) {
   res.send("Hey there")
 })
 
-router.get('/addNote', function (req, res) {
-  var newNote = new Note({ semestre: 3, branche: 'test', note: 1 })
+router.post('/addNote', urlencodedParser, function (req, res) {
+  var newNote = new Note({ semestre: req.body.semestreSelect, branche: req.body.brancheSelect, note: req.body.noteSelect })
   newNote.save(function (err) {
     if (err) throw err;
   })

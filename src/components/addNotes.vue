@@ -1,13 +1,13 @@
 <template>
   <div class="notesTable">
     <form id="addNoteForm" method="POST" action="http://localhost:3000/api/addNote">
-      <select>
+      <select name="semestreSelect">
       <option v-for="semestre in semestres">{{semestre.num}}</option>
       </select>
-      <select>
+      <select name="brancheSelect">
         <option v-for="branche in branches">{{branche.nom}}</option>
     </select>
-      <select>
+      <select name="noteSelect">
         <option v-for="note in notes">{{note.num}}</option>
     </select>
       <input type="submit" />
