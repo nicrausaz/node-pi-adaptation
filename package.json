@@ -10,6 +10,7 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
+    "body-parser": "^1.16.1",
     "mongoose": "^4.8.4",
     "vue": "^2.1.0"
   },
