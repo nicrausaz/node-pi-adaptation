@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
+// TODO: use JSON encoder too
 
 const Note = require('../../models/Note.js');
 

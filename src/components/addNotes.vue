@@ -80,6 +80,6 @@
   }
   
   .notesTable {
-    margin-left: 75%;
+    margin-left: 80%;
   }
 </style>

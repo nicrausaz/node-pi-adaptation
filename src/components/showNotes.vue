@@ -22,7 +22,7 @@
     data () {
       return {
         msg: 'Notes:',
-        items: []
+        items: [] // onload return
       }
     },
     methods: {
@@ -32,6 +32,10 @@
 </script>
 
 <style scoped>
+  .notesTable {
+    margin-left: 20%;
+  }
+  
   table {
     border-collapse: collapse;
     width: 100%;
