@@ -13,9 +13,6 @@
       </tr>
     </tbody>
     </table>
-    <form method="GET">
-    <input type="submit" action="http://localhost:3000/api/listNotes">
-    </form>
   </div>
 </template>
 
@@ -24,7 +21,8 @@
     name: 'notesTable',
     data () {
       return {
-        msg: 'Notes:'
+        msg: 'Notes:',
+        items: []
       }
     },
     methods: {

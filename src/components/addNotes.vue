@@ -1,6 +1,6 @@
 <template>
   <div class="notesTable">
-    <form id="addNoteForm" method="GET">
+    <form id="addNoteForm" method="GET" action="http://localhost:3000/api/addNote">
       <select>
       <option v-for="semestre in semestres">{{semestre.num}}</option>
       </select>
