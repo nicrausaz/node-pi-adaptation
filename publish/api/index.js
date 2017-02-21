@@ -17,8 +17,8 @@ router.get('/', function (req, res) {
 
 router.post('/addNote', urlencodedParser, function (req, res) {
   var newNote = new Note({ semestre: req.body.semestreSelect, branche: req.body.brancheSelect, note: req.body.noteSelect })
-  saveNewNote()
-  res.resdirect('index.html')
+  saveNewNote(newNote)
+  res.redirect('localhost:8080/index.html')
 })
 
 router.get('/listNotes', function (req, res) {
@@ -30,7 +30,7 @@ router.get('/listNotes', function (req, res) {
   })
 })
 
-function saveNewNote() {
+function saveNewNote(newNote) {
   newNote.save(function (err) {
     if (err) throw err;
   })

@@ -1,16 +1,33 @@
 <template>
   <div class="notesTable">
     <form id="addNoteForm" method="POST" action="http://localhost:3000/api/addNote">
-      <select name="semestreSelect">
-      <option v-for="semestre in semestres">{{semestre.num}}</option>
-      </select>
-      <select name="brancheSelect">
-        <option v-for="branche in branches">{{branche.nom}}</option>
-    </select>
-      <select name="noteSelect">
-        <option v-for="note in notes">{{note.num}}</option>
-    </select>
-      <input type="submit" />
+
+      <table>
+        <tr>
+          <td><label for="semestreSelect">Semestre:</label></td>
+          <td><select name="semestreSelect">
+                <option v-for="semestre in semestres">{{semestre.num}}</option>
+              </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="brancheSelect">Branche:</label></td>
+          <td><select name="brancheSelect">
+                <option v-for="branche in branches">{{branche.nom}}</option>
+              </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="noteSelect">Note:</label></td>
+          <td><select name="noteSelect">
+                <option v-for="note in notes">{{note.num}}</option>
+              </select>
+          </td>
+        </tr>
+        <tr>
+          <td><input type="submit" /></td>
+        </tr>
+      </table>      
     </form>
   </div>
 </template>
@@ -18,7 +35,7 @@
 <script>
   export default {
     name: 'notesTable',
-    data() {
+    data () {
       return {
         branches: [
           { nom: 'Mathématiques' },
@@ -57,6 +74,12 @@
 
 </script>
 
-<style>
-
+<style scoped>
+  table {
+    text-align: left;
+  }
+  
+  .notesTable {
+    margin-left: 75%;
+  }
 </style>
