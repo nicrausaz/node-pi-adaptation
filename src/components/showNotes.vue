@@ -1,5 +1,5 @@
 <template>
-  <div class="notesTable">
+  <div class="showNotesTable">
     <thead>
       <th>Semestre</th>
       <th>Branche</th>
@@ -18,7 +18,7 @@
 
 <script>
   export default {
-    name: 'notesTable',
+    name: 'showNotesTable',
     data () {
       return {
         msg: 'Notes:',
@@ -32,7 +32,7 @@
 </script>
 
 <style scoped>
-  .notesTable {
+  .showNotesTable {
     margin-left: 20%;
   }
   

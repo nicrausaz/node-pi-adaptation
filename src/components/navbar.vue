@@ -14,9 +14,13 @@
     methods: {
       showShowNotesDiv: function () {
         console.log('will show div show')
+          $('#showNotesTable').show(1000)
+          $('#addNotesTable').hide(1000)
       },
       showAddNotesDiv: function () {
         console.log('will show div add')
+        $('#addNotesTable').show(1000)
+        $('#showNotesTable').hide(1000)
       }
     }
   }

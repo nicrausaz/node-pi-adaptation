@@ -1,5 +1,5 @@
 <template>
-  <div class="notesTable">
+  <div class="addNotesTable">
     <form id="addNoteForm" method="POST" action="http://localhost:3000/api/addNote">
 
       <table>
@@ -34,7 +34,7 @@
 
 <script>
   export default {
-    name: 'notesTable',
+    name: 'addNotesTable',
     data () {
       return {
         branches: [
@@ -79,7 +79,7 @@
     text-align: left;
   }
   
-  .notesTable {
+  .addNotesTable {
     margin-left: 80%;
   }
 </style>
