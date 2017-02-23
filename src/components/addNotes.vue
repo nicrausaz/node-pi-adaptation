@@ -1,7 +1,6 @@
 <template>
-  <div class="addNotesTable">
+  <div class="addNotesTable" id="addNotesTable">
     <form id="addNoteForm" method="POST" action="http://localhost:3000/api/addNote">
-
       <table>
         <tr>
           <td><label for="semestreSelect">Semestre:</label></td>

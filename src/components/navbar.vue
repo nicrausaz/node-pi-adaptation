@@ -9,13 +9,16 @@
 </template>
 
 <script>
+  const $ = require('jquery')
   export default {
     name: 'navbar',
     methods: {
       showShowNotesDiv: function () {
-        console.log('will show div show')
+        $(document).ready(function () {
+          console.log('will show div show')
           $('#showNotesTable').show(1000)
           $('#addNotesTable').hide(1000)
+        })
       },
       showAddNotesDiv: function () {
         console.log('will show div add')

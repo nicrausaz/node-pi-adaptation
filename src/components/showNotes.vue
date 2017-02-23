@@ -1,5 +1,5 @@
 <template>
-  <div class="showNotesTable">
+  <div class="showNotesTable" id="showNotesTable">
     <thead>
       <th>Semestre</th>
       <th>Branche</th>
