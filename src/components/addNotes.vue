@@ -26,7 +26,7 @@
         <tr>
           <td><input type="submit" /></td>
         </tr>
-      </table>      
+      </table>
     </form>
   </div>
 </template>
@@ -79,6 +79,10 @@
   }
   
   .addNotesTable {
-    margin-left: 80%;
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    padding-top: 40px;
   }
 </style>

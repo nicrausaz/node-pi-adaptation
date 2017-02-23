@@ -1,7 +1,6 @@
 <template>
   <div class="navbar">
     <ul>
-      <li><a>Acceuil</a></li>
       <li><a @click="showShowNotesDiv">Afficher les notes</a></li>
       <li><a @click="showAddNotesDiv">Ajouter des notes</a></li>
     </ul>
@@ -14,14 +13,10 @@
     name: 'navbar',
     methods: {
       showShowNotesDiv: function () {
-        $(document).ready(function () {
-          console.log('will show div show')
-          $('#showNotesTable').show(1000)
-          $('#addNotesTable').hide(1000)
-        })
+        $('#showNotesTable').show(1000)
+        $('#addNotesTable').hide(1000)
       },
       showAddNotesDiv: function () {
-        console.log('will show div add')
         $('#addNotesTable').show(1000)
         $('#showNotesTable').hide(1000)
       }
@@ -49,6 +44,7 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    cursor: pointer;
   }
   /* Change the link color to #111 (black) on hover */
   

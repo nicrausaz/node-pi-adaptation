@@ -33,7 +33,10 @@
 
 <style scoped>
   .showNotesTable {
-    margin-left: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    padding-top: 40px;
   }
   
   table {
