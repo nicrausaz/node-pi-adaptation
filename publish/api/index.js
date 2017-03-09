@@ -1,11 +1,12 @@
 const express = require('express')
 const router = express.Router()
 const mongoose = require('mongoose')
-const bodyParser = require('body-parser')
+var bodyParser = require('body-parser')
 
-
-const urlencodedParser = bodyParser.urlencoded({ extended: false })
-// TODO: use JSON encoder too
+router.use( bodyParser.json() );       // to support JSON-encoded bodies
+router.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+})); 
 
 const Note = require('../../models/Note.js');
 
@@ -17,10 +18,10 @@ router.get('/', function (req, res) {
   res.send("Hey there")
 })
 
-router.post('/addNote', urlencodedParser, function (req, res) {
-  var newNote = new Note({ semestre: req.body.semestreSelect, branche: req.body.brancheSelect, note: req.body.noteSelect })
+router.post('/addNote', function (req, res) {
+  var newNote = new Note({ semestre: req.body.semestre, branche: req.body.branche, note: req.body.note})
   saveNewNote(newNote)
-  res.redirect('localhost:8080/index.html')
+  res.json({status: 200, msg: 'youpi'})
 })
 
 router.get('/listNotes', function (req, res) {
