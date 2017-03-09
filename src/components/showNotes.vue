@@ -1,5 +1,6 @@
 <template>
   <div class="showNotesTable" id="showNotesTable">
+  <table>
     <thead>
       <th>Semestre</th>
       <th>Branche</th>
@@ -21,11 +22,13 @@
     name: 'showNotesTable',
     data () {
       return {
-        msg: 'Notes:',
-        items: [] // onload return
+        items: []
       }
     },
-    methods: {
+    created () {
+      this.$http.get('/api/listNotes').then((response) => {
+        this.items = response.data.data
+      })
     }
   }
 
