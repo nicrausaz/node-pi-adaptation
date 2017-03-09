@@ -1,18 +1,18 @@
 <template>
   <div class="showNotesTable" id="showNotesTable">
-  <table>
-    <thead>
-      <th>Semestre</th>
-      <th>Branche</th>
-      <th>Note</th>
-    </thead>
-    <tbody>
-      <tr v-for="item in items">
-        <td>{{item.semestre}}</td>
-        <td>{{item.branche}}</td>
-        <td>{{item.note}}</td>
-      </tr>
-    </tbody>
+    <table>
+      <thead>
+        <th>Semestre</th>
+        <th>Branche</th>
+        <th>Note</th>
+      </thead>
+      <tbody>
+        <tr v-for="item in items">
+          <td>{{item.semestre}}</td>
+          <td>{{item.branche}}</td>
+          <td>{{item.note}}</td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </template>
@@ -27,7 +27,7 @@
     },
     created () {
       this.$http.get('/api/listNotes').then((response) => {
-        this.items = response.data.data
+        this.items = response.data
       })
     }
   }

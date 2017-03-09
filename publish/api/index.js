@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router()
 const mongoose = require('mongoose')
-var bodyParser = require('body-parser')
+const bodyParser = require('body-parser')
 
-router.use( bodyParser.json() )
+router.use(bodyParser.json())
 router.use(bodyParser.urlencoded({
   extended: true
 }))
@@ -19,17 +19,15 @@ router.get('/', function (req, res) {
 })
 
 router.post('/addNote', function (req, res) {
-  var newNote = new Note({ semestre: req.body.semestre, branche: req.body.branche, note: req.body.note})
+  var newNote = new Note({ semestre: req.body.semestre, branche: req.body.branche, note: req.body.note })
   saveNewNote(newNote)
-  res.json({status: 200, msg: 'DONE'})
+  res.json({ status: 200, msg: 'Note ajoutée' })
 })
 
 router.get('/listNotes', function (req, res) {
-  res.json({
-    data: [
-      { semestre: 1, branche: 'maths', note: 5 },
-      { semestre: 2, branche: 'allemand', note: 4.5 }
-    ]
+
+  Note.find({}, function (err, notes) {
+    res.json(notes);
   })
 })
 
@@ -38,5 +36,14 @@ function saveNewNote(newNote) {
     if (err) throw err;
   })
 }
+
+// function getNotes(Note) {
+//   Note.find({}, function (err, docs) {
+
+//     if (!err) {
+//       return docs
+//     } else { throw err }
+//   })
+// }
 
 module.exports = router

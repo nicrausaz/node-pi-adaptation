@@ -1,7 +1,7 @@
 <template>
   <div class="addNotesTable" id="addNotesTable">
-  <div>
-  <table>
+    <div>
+      <table>
         <tr>
           <td><label for="semestreSelect">Semestre:</label></td>
           <td><select name="semestreSelect" v-model="note2add.semestre">
@@ -18,7 +18,7 @@
         </tr>
         <tr>
           <td><label for="noteSelect">Note:</label></td>
-          <td><select name="noteSelect"  v-model="note2add.note">
+          <td><select name="noteSelect" v-model="note2add.note">
                 <option v-for="note in notes">{{note}}</option>
               </select>
           </td>
@@ -27,9 +27,9 @@
           <td><button @click="sendNote">CLICK me</button></td>
         </tr>
       </table>
+    </div>
   </div>
-  </div>
-      
+
 </template>
 
 <script>
@@ -51,7 +51,7 @@
       return {
         note2add: {
           note: 6,
-          branche: '',
+          branche: 'Mathématiques',
           semestre: 4
         },
         branches: [

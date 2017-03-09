@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-     <div class="navbar">
+    <div class="navbar">
       <ul>
         <li><a @click="showNoteEnabled = true">Afficher les notes</a></li>
         <li><a @click="showNoteEnabled = false">Ajouter des notes</a></li>
