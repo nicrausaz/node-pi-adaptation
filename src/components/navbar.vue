@@ -8,19 +8,8 @@
 </template>
 
 <script>
-  const $ = require('jquery')
   export default {
-    name: 'navbar',
-    methods: {
-      showShowNotesDiv: function () {
-        $('#showNotesTable').show(1000)
-        $('#addNotesTable').hide(1000)
-      },
-      showAddNotesDiv: function () {
-        $('#addNotesTable').show(1000)
-        $('#showNotesTable').hide(1000)
-      }
-    }
+    name: 'navbar'
   }
 
 </script>

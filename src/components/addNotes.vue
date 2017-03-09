@@ -38,7 +38,7 @@
     methods: {
       sendNote () {
         this.$http.post('/api/addNote', this.note2add).then((response) => {
-          console.log('added')
+          console.log(response.data.msg) // toaster
         })
       }
     },
@@ -74,7 +74,6 @@
   }
   
   .addNotesTable {
-    display: none;
     margin-left: auto;
     margin-right: auto;
     width: 300px;

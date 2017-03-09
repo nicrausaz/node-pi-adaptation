@@ -3,10 +3,10 @@ const router = express.Router()
 const mongoose = require('mongoose')
 var bodyParser = require('body-parser')
 
-router.use( bodyParser.json() );       // to support JSON-encoded bodies
-router.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+router.use( bodyParser.json() )
+router.use(bodyParser.urlencoded({
   extended: true
-})); 
+}))
 
 const Note = require('../../models/Note.js');
 
@@ -21,7 +21,7 @@ router.get('/', function (req, res) {
 router.post('/addNote', function (req, res) {
   var newNote = new Note({ semestre: req.body.semestre, branche: req.body.branche, note: req.body.note})
   saveNewNote(newNote)
-  res.json({status: 200, msg: 'youpi'})
+  res.json({status: 200, msg: 'DONE'})
 })
 
 router.get('/listNotes', function (req, res) {

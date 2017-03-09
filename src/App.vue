@@ -1,8 +1,14 @@
 <template>
   <div id="app">
-    <Navbar></Navbar>
-    <ShowNotes></ShowNotes>
-    <AddNotes></AddNotes>
+     <div class="navbar">
+      <ul>
+        <li><a @click="showNoteEnabled = true">Afficher les notes</a></li>
+        <li><a @click="showNoteEnabled = false">Ajouter des notes</a></li>
+      </ul>
+    </div>
+    <pre>{{showNoteEnabled}}</pre>
+    <ShowNotes v-if="showNoteEnabled"></ShowNotes>
+    <AddNotes v-else></AddNotes>
   </div>
 </template>
 
@@ -17,6 +23,11 @@
       Navbar,
       ShowNotes,
       AddNotes
+    },
+    data () {
+      return {
+        showNoteEnabled: true
+      }
     }
   }
 
