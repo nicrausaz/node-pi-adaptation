@@ -26,6 +26,7 @@
         <tr>
           <td><button @click="sendNote">CLICK me</button></td>
         </tr>
+        <div id="queryStatus"></div>
       </table>
     </div>
   </div>
@@ -39,7 +40,7 @@
       sendNote () {
         this.$http.post('/api/addNote', this.note2add).then((response) => {
           console.log(response.data.msg)
-          // toastr.info('Are you the 6 fingered man?')
+          document.getElementById('queryStatus').innerHTML = response.data.msg
         })
       }
     },

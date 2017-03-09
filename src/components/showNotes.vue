@@ -12,7 +12,7 @@
           <td>{{item.semestre}}</td>
           <td>{{item.branche}}</td>
           <td>{{item.note}}</td>
-          <td><button class="fa fa-trash" @click></button></td>
+          <td><button class="fa fa-trash" @click="deleteRecord"></button></td>
         </tr>
       </tbody>
     </table>
@@ -31,6 +31,13 @@
       this.$http.get('/api/listNotes').then((response) => {
         this.items = response.data
       })
+    },
+    methods: {
+      deleteRecord () {
+        this.$http.post('/api/deleteRecord').then((response) => {
+          console.log('test')
+        })
+      }
     }
   }
 
