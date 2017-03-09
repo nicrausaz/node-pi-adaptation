@@ -5,6 +5,7 @@
         <th>Semestre</th>
         <th>Branche</th>
         <th>Note</th>
+        <th class="fa fa-trash"></th>
       </thead>
       <tbody>
         <tr v-for="item in items">

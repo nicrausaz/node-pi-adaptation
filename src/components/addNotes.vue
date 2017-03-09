@@ -38,7 +38,8 @@
     methods: {
       sendNote () {
         this.$http.post('/api/addNote', this.note2add).then((response) => {
-          console.log(response.data.msg) // toaster
+          console.log(response.data.msg)
+          // toastr.info('Are you the 6 fingered man?')
         })
       }
     },
