@@ -14,6 +14,7 @@
           <td>{{item.note}}</td>
           <td><button class="fa fa-trash" @click="deleteRecord"></button></td>
         </tr>
+        <tr v-if="items.length == 0"><td>Aucune note</td></tr>
       </tbody>
     </table>
   </div>

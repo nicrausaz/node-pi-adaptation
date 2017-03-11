@@ -32,7 +32,7 @@ router.post('/addNote', function (req, res) {
 })
 
 router.post('/deleteRecord', function (req, res) {
-  console.log(req.body.semestre)
+  // console.log(req.body.semestre)
 })
 
 function saveNewNote(newNote) {
