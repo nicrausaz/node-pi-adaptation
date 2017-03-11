@@ -15,6 +15,7 @@
   import Navbar from './components/navbar'
   import ShowNotes from './components/showNotes'
   import AddNotes from './components/addNotes'
+  import Toaster from './components/toaster'
 
   export default {
     name: 'app',

@@ -24,7 +24,7 @@
           </td>
         </tr>
         <tr>
-          <td><button @click="sendNote">CLICK me</button></td>
+          <td><button @click="sendNote">Ajouter</button></td>
         </tr>
         <div id="queryStatus"></div>
       </table>
