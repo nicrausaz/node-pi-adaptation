@@ -1,6 +1,6 @@
 <template>
   <div class="addNotesTable" id="addNotesTable">
-    <div class="mdl-card mdl-shadow--2dp">
+    <div class="mdl-card mdl-shadow--8dp">
       <div class="mdl-card__title mdl-card--expand">
         <h2 class="mdl-card__title-text">Ajouter une note</h2>
       </div>
