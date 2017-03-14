@@ -26,13 +26,17 @@ router.get('/listNotes', function (req, res) {
 })
 
 router.post('/addNote', function (req, res) {
-  var newNote = new Note({ semestre: req.body.semestre, branche: req.body.branche, note: req.body.note })
+  var newNote = new Note({ _id: new mongoose.Types.ObjectId, semestre: req.body.semestre, branche: req.body.branche, note: req.body.note })
   saveNewNote(newNote)
   res.json({ status: 200, msg: 'Note ajoutée' })
 })
 
 router.post('/deleteRecord', function (req, res) {
-  // console.log(req.body.semestre)
+  console.log(req.body._id)
+  Note.remove({ note: req.body.note }, function (err) {
+    if (err) throw err
+    else res.json({ status: 200, msg: 'Note ajoutée' })
+  })
 })
 
 function saveNewNote(newNote) {

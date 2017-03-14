@@ -26,11 +26,9 @@
         <tr>
           <td><button @click="sendNote">Ajouter</button></td>
         </tr>
-        <div id="queryStatus"></div>
       </table>
     </div>
   </div>
-
 </template>
 
 <script>
@@ -40,7 +38,7 @@
       sendNote () {
         this.$http.post('/api/addNote', this.note2add).then((response) => {
           console.log(response.data.msg)
-          document.getElementById('queryStatus').innerHTML = response.data.msg
+          // document.getElementById('queryStatus').innerHTML = response.data.msg
         })
       }
     },

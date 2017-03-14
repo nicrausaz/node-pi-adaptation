@@ -9,6 +9,7 @@
       </thead>
       <tbody>
         <tr v-for="item in items">
+          <td style="display: none;">{{item._id}}</td>
           <td>{{item.semestre}}</td>
           <td>{{item.branche}}</td>
           <td>{{item.note}}</td>
@@ -36,7 +37,6 @@
     methods: {
       deleteRecord () {
         this.$http.post('/api/deleteRecord').then((response) => {
-          console.log('test')
         })
       }
     }
