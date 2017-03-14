@@ -1,23 +1,20 @@
 <template>
   <div class="showNotesTable" id="showNotesTable">
-    <table>
-      <thead>
-        <th>Semestre</th>
-        <th>Branche</th>
-        <th>Note</th>
-        <th class="fa fa-trash"></th>
-      </thead>
-      <tbody>
-        <tr v-for="item in items">
-          <td style="display: none;">{{item._id}}</td>
-          <td>{{item.semestre}}</td>
-          <td>{{item.branche}}</td>
-          <td>{{item.note}}</td>
-          <td><button class="fa fa-trash" @click="deleteRecord"></button></td>
-        </tr>
-        <div v-if="items.length == 0">Aucune note</div>
-      </tbody>
-    </table>
+    <div class="mdl-card mdl-shadow--2dp" v-for="item in items">
+      <div class="mdl-card__title mdl-card--expand">
+        <h2 class="mdl-card__title-text">{{item.branche}}</h2>
+      </div>
+      <div class="mdl-card__supporting-text" v-if="items.length == 0">Aucune note</div>
+      <div class="mdl-card__supporting-text" v-else>
+        Semestre {{item.semestre}}:
+        {{item.note}}
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" @click="deleteRecord">
+          CLICK
+        </a>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -46,25 +43,6 @@
 
 <style scoped>
   .showNotesTable {
-    margin-left: auto;
-    margin-right: auto;
-    width: 300px;
-    padding-top: 40px;
-  }
-  
-  table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  th,
-  td {
-    padding: 8px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  tr:hover {
-    background-color: #f5f5f5
+    display: block;
   }
 </style>
