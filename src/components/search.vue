@@ -42,10 +42,11 @@
 </script>
 
 <style scoped>
-    #searchZone{
-        width: 100px;
-        height: 10px;
-        right: 50%;
-        left: 50%;
+    #searchZone {
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 </style>
