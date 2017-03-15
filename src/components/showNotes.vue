@@ -9,11 +9,6 @@
         Semestre {{item.semestre}}:
         Notes:{{item.note}}
       </div>
-      <div class="mdl-card__actions mdl-card--border">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" @click="deleteRecord">
-          CLICK
-        </a>
-      </div>
     </div>
   </div>
 </template>
@@ -26,7 +21,7 @@
       }
     },
     created () {
-      this.$http.get('/api/listNotes').then((response) => {
+      this.$http.get('/api/getNotes').then((response) => {
         this.items = response.data
       })
     },

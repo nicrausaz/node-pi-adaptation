@@ -18,12 +18,19 @@ router.get('/', function (req, res) {
   res.send("Hey there")
 })
 
-router.get('/listNotes', function (req, res) {
+router.get('/getNotes', function (req, res) {
   Note.find({}, function (err, notes) {
     res.json(notes)
     if (err) throw err
   })
 })
+
+// router.get('/getMathNotes', function (req, res) {
+//   Note.find({branche: 'Mathématiques'}, function (err, notes) {
+//     res.json(notes)
+//     if (err) throw err
+//   })
+// })
 
 router.post('/addNote', function (req, res) {
   var newNote = new Note({ _id: new mongoose.Types.ObjectId, semestre: req.body.semestre, branche: req.body.branche, note: req.body.note })
