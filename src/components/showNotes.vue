@@ -1,18 +1,19 @@
 <template>
   <div class="showNotesTable" id="showNotesTable">
-  <Search></Search>
-  <div v-if="items.length == 0" id="noContentMessage">Aucune note</div>
-  <div class="mdl-card mdl-shadow--8dp" v-else v-for="item in items" v-if="selectedBranch == item.branche">
-      <div class="mdl-card__title mdl-card--expand">
+    <Search></Search>
+    <div class="mdl-card mdl-shadow--8dp" v-for="item in items" v-if="selectedBranch == item.branche">
+      <div v-if="items.length != 0" class="mdl-card__title mdl-card--expand">
         <h2 class="mdl-card__title-text">{{item.branche}}</h2>
       </div>
       <div class="mdl-card__supporting-text">
-        Semestre {{item.semestre}}:
-        Notes:{{item.note}}
+          Semestre {{item.semestre}}:
+          Notes:{{item.note}}
       </div>
     </div>
+    <div v-else class="noContentMessage">Aucune note</div>
   </div>
 </template>
+
 <script>
   import Search from './search'
   import bus from './bus'
@@ -55,7 +56,7 @@
     display: inline-block;
   }
 
-  #noContentMessage{
+  .noContentMessage{
     font-size: 40px;
     width: 300px;
     height: 100px;
