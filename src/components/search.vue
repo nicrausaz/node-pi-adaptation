@@ -9,6 +9,8 @@
  
 <script>
   import { BasicSelect } from 'vue-search-select'
+  import bus from './bus'
+
   export default {
     data () {
       return {
@@ -30,6 +32,8 @@
     methods: {
       onSelect (item) {
         this.item = item
+        console.log('try to emit')
+        bus.$emit('emittest')
       },
       reset () {
         this.item = {}

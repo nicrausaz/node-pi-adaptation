@@ -15,6 +15,7 @@
 </template>
 <script>
   import Search from './search'
+  import bus from './bus'
 
   export default {
     name: 'showNotesTable',
@@ -27,12 +28,15 @@
       this.$http.get('/api/getNotes').then((response) => {
         this.items = response.data
       })
+      bus.$on('emittest', () => {
+        console.log('emit received')
+      })
     },
     methods: {
-      deleteRecord () {
-        this.$http.post('/api/deleteRecord').then((response) => {
-        })
-      }
+      // deleteRecord () {
+      //   this.$http.post('/api/deleteRecord').then((response) => {
+      //   })
+      //   },
     },
     components: {
       Search
