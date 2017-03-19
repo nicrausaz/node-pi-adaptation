@@ -1,5 +1,6 @@
 <template>
   <div class="showNotesTable" id="showNotesTable">
+  <Search></Search>
   <div v-if="items.length == 0" id="noContentMessage">Aucune note</div>
     <div class="mdl-card mdl-shadow--8dp" v-else v-for="item in items">
       <div class="mdl-card__title mdl-card--expand">
@@ -13,6 +14,8 @@
   </div>
 </template>
 <script>
+  import Search from './search'
+
   export default {
     name: 'showNotesTable',
     data () {
@@ -30,6 +33,9 @@
         this.$http.post('/api/deleteRecord').then((response) => {
         })
       }
+    },
+    components: {
+      Search
     }
   }
 

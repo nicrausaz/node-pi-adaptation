@@ -6,7 +6,6 @@
         <li><a @click="showNoteEnabled = false">Ajouter des notes</a></li>
       </ul>
     </div>
-    <Search></Search>
     <ShowNotes v-if="showNoteEnabled"></ShowNotes>
     <AddNotes v-else></AddNotes>
     
@@ -18,7 +17,6 @@
   import Navbar from './components/navbar'
   import ShowNotes from './components/showNotes'
   import AddNotes from './components/addNotes'
-  import Search from './components/search'
   // import Toaster from './components/toaster'
 
   export default {
@@ -26,8 +24,7 @@
     components: {
       Navbar,
       ShowNotes,
-      AddNotes,
-      Search
+      AddNotes
       // Toaster
     },
     data () {

@@ -9,12 +9,16 @@
  
 <script>
   import { BasicSelect } from 'vue-search-select'
-
   export default {
     data () {
       return {
         options: [
-          { value: '1', text: 'Mathématiques' }
+          { value: '1', text: 'Mathématiques' },
+          { value: '2', text: 'Physique' },
+          { value: '3', text: 'Allemand' },
+          { value: '4', text: 'Economie' },
+          { value: '5', text: 'Anglais' },
+          { value: '6', text: 'Français' }
         ],
         searchText: '',
         item: {
