@@ -1,7 +1,7 @@
 <template>
   <div class="showNotesTable" id="showNotesTable">
     <Search></Search>
-    <div class="mdl-card mdl-shadow--8dp" v-for="item in items" v-if="selectedBranch == item.branche">
+    <div class="mdl-card mdl-shadow--8dp" v-for="item in items" v-if="selectedBranch == item.branche || selectedBranch == ''">
       <div v-if="items.length != 0" class="mdl-card__title mdl-card--expand">
         <h2 class="mdl-card__title-text">{{item.branche}}</h2>
       </div>
@@ -29,6 +29,7 @@
     created () {
       this.$http.get('/api/getNotes').then((response) => {
         this.items = response.data
+        console.log(this.items.length)
       })
       bus.$on('selectedBranch', (text) => {
         this.selectedBranch = text
