@@ -2,7 +2,7 @@
   <div class="showNotesTable" id="showNotesTable">
   <Search></Search>
   <div v-if="items.length == 0" id="noContentMessage">Aucune note</div>
-    <div class="mdl-card mdl-shadow--8dp" v-else v-for="item in items">
+  <div class="mdl-card mdl-shadow--8dp" v-else v-for="item in items" v-if="selectedBranch == item.branche">
       <div class="mdl-card__title mdl-card--expand">
         <h2 class="mdl-card__title-text">{{item.branche}}</h2>
       </div>
@@ -21,7 +21,8 @@
     name: 'showNotesTable',
     data () {
       return {
-        items: []
+        items: [],
+        selectedBranch: ''
       }
     },
     created () {
@@ -29,7 +30,7 @@
         this.items = response.data
       })
       bus.$on('selectedBranch', (text) => {
-        console.log(text)
+        this.selectedBranch = text
       })
     },
     methods: {

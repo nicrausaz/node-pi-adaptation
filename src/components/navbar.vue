@@ -40,8 +40,7 @@ ul {
     text-decoration: none;
     cursor: pointer;
   }
-  /* Change the link color to #111 (black) on hover */
-  
+
   li a:hover {
     background-color: #111;
   }
