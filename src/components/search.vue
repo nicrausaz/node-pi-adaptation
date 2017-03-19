@@ -32,8 +32,7 @@
     methods: {
       onSelect (item) {
         this.item = item
-        console.log('try to emit')
-        bus.$emit('emittest')
+        bus.$emit('selectedBranch', item.text)
       },
       reset () {
         this.item = {}

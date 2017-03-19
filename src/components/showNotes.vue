@@ -28,8 +28,8 @@
       this.$http.get('/api/getNotes').then((response) => {
         this.items = response.data
       })
-      bus.$on('emittest', () => {
-        console.log('emit received')
+      bus.$on('selectedBranch', (text) => {
+        console.log(text)
       })
     },
     methods: {
