@@ -1,7 +1,7 @@
 <template>
   <basic-select :options="options"
                 :selected-option="item"
-                placeholder="select item"
+                placeholder="Choisir une branche"
                 @select="onSelect"
                 id="searchZone">
   </basic-select>

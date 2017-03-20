@@ -7,8 +7,8 @@
       </div>
       <div class="mdl-card__supporting-text">
           Semestre {{item.semestre}}:
-          Notes:{{item.note}}
-      </div>
+          Note: {{item.note}}
+      </div>     
     </div>
     <div v-else class="noContentMessage">Aucune note</div>
   </div>
