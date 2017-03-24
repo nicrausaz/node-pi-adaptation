@@ -20,7 +20,27 @@ router.get('/', function (req, res) {
 
 router.get('/getNotes', function (req, res) {
   Note.find({}, function (err, notes) {
-    res.json(notes)
+    var result = { branches: [] }
+    for (noteMongo of notes) {
+      let note = noteMongo.toObject()
+      let currentBranch = result.branches.filter((branch) => { branch.nom === note.branche })
+
+      if (currentBranch.length !== 1) {
+        currentBranch = { nom: note.branche, semestres: [] }
+        result.branches.push(currentBranch)
+      }
+
+      let currentSemestre = currentBranch.semestres.filter((semestre) => { semestre.nom === note.semestre })
+
+      if (currentSemestre.length !== 1) {
+        currentSemestre = { number: note.semestre, notes: [] }
+        currentBranch.semestres.push(currentSemestre)
+      }
+
+      currentSemestre.notes.push(note.note)
+    }
+
+    res.json(result)
     if (err) throw err
   })
 })
