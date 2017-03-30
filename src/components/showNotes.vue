@@ -1,5 +1,5 @@
 <template>
-  <div class="showNotesTable" id="showNotesTable">
+  <!--<div class="showNotesTable" id="showNotesTable">
     <Search></Search>
     <div class="mdl-card mdl-shadow--8dp" v-for="item in items" v-if="selectedBranch == item.branche || selectedBranch == ''">
       <div v-if="items.length != 0" class="mdl-card__title mdl-card--expand">
@@ -12,11 +12,18 @@
     </div>
     <div v-else class="noContentMessage">Aucune note</div>
   </div>
+-->
+
+<div class="showNotesTable" id="showNotesTable">
+  <branche v-for="item in items" :item="item"></branche>
+</div>
+  
 </template>
 
 <script>
   import Search from './search'
   import bus from './bus'
+  import Branche from './branche'
 
   export default {
     name: 'showNotesTable',
@@ -29,8 +36,7 @@
     created () {
       this.$http.get('/api/getNotes').then((response) => {
         this.items = response.data.branches
-        console.log(this.items.branches)
-        // console.log(this.items)
+        console.log(this.items)
       })
       bus.$on('selectedBranch', (text) => {
         this.selectedBranch = text
@@ -43,7 +49,7 @@
       //   },
     },
     components: {
-      Search
+      Search, Branche
     }
   }
 

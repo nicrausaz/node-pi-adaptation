@@ -23,18 +23,26 @@ router.get('/getNotes', function (req, res) {
     let result = { branches: [] }
     for (noteMongo of notes) {
       let note = noteMongo.toObject()
-      let currentBranch = result.branches.filter((branch) => { branch.nom === note.branche })
+      let currentBranch = result.branches.filter((item) => { 
+        return item.nom == note.branche 
+      })
 
       if (currentBranch.length !== 1) {
         currentBranch = { nom: note.branche, semestres: [] }
         result.branches.push(currentBranch)
+      } else {
+        currentBranch = currentBranch[0]
       }
 
-      let currentSemestre = currentBranch.semestres.filter((semestre) => { semestre.nom === note.semestre })
+      let currentSemestre = currentBranch.semestres.filter((semestre) => { 
+        return semestre.number == note.semestre 
+      })
 
       if (currentSemestre.length !== 1) {
         currentSemestre = { number: note.semestre, notes: [] }
         currentBranch.semestres.push(currentSemestre)
+      } else {
+        currentSemestre = currentSemestre[0]
       }
 
       currentSemestre.notes.push(note.note)
