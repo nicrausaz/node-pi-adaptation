@@ -3,11 +3,11 @@
     <Search></Search>
     <div class="mdl-card mdl-shadow--8dp" v-for="item in items" v-if="selectedBranch == item.branche || selectedBranch == ''">
       <div v-if="items.length != 0" class="mdl-card__title mdl-card--expand">
-        <h2 class="mdl-card__title-text">{{item.branche}}</h2>
+        <h2 class="mdl-card__title-text">{{item.nom}}</h2>
       </div>
       <div class="mdl-card__supporting-text">
-          Semestre {{item.semestre}}:
-          Note: {{item.note}}
+          Semestre {{item.semestres.number}}:
+          Note: {{item.semestres.notes}}
       </div>
     </div>
     <div v-else class="noContentMessage">Aucune note</div>
@@ -28,8 +28,9 @@
     },
     created () {
       this.$http.get('/api/getNotes').then((response) => {
-        this.items = response.data
-        console.log(this.items.length)
+        this.items = response.data.branches
+        console.log(this.items.branches)
+        // console.log(this.items)
       })
       bus.$on('selectedBranch', (text) => {
         this.selectedBranch = text
